@@ -70,7 +70,7 @@ public class TodoService implements Base<Todo> {
                     "completed=? where id=?");
             preparedStatement.setString(1, todo.getTodo());
             preparedStatement.setString(2, todo.getTime());
-            preparedStatement.setString(3, todo.getDate());
+            preparedStatement.setString(3,todo.getDate());
             preparedStatement.setBoolean(4, todo.isCompleted());
             preparedStatement.setLong(4, todo.getId());
             status = preparedStatement.executeUpdate();
@@ -99,6 +99,8 @@ public class TodoService implements Base<Todo> {
         }
         return status>0;
     }
+
+
 
     @Override
     public Todo get(Long id) {

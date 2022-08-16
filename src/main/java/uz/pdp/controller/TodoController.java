@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import uz.pdp.model.Todo;
 import uz.pdp.service.Base;
+import uz.pdp.service.TodoService;
 
 @Controller
 @RequestMapping("/api/v1/todo")
@@ -13,6 +14,14 @@ public class TodoController {
 
     public TodoController(Base<Todo> base) {
         this.base = base;
+    }
+
+    @GetMapping("")
+    public String main(
+            Model model
+    ){
+        model.addAttribute("todoList", base.getALLTodo());
+        return "todo";
     }
 
     @PostMapping("/add")
@@ -75,5 +84,4 @@ public class TodoController {
         model.addAttribute("todoList",base.getALLTodo());
         return "todo";
     }
-
 }

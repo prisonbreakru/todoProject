@@ -1,12 +1,12 @@
 package uz.pdp.service;
 
 import org.springframework.stereotype.Service;
-import uz.pdp.model.Todo;
+import uz.pdp.db.DatabaseInit;
 
 import java.util.List;
 
 @Service
-public interface Base<T> extends DatabaseInit{
+public interface Base<T> extends DatabaseInit {
     boolean add(T t);
     List<T> getALL(int page, int size);
     boolean delete(Long id);
