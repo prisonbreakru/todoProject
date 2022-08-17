@@ -19,12 +19,13 @@
                 </div>
                 <div class="form-group">
                     <label>Time</label>
-                    <input type="time" name= "timeOld" value="${todo.time}" class="form-control"/>
+                    <input type="time" name= "time" value="${todo.time}" class="form-control"/>
                 </div>
                 <div class="form-group">
                     <label>Date</label>
-                    <input type="date" name="password" value="${todo.date}" class="form-control"/>
+                    <input type="date" name="date" value="${todo.date}" class="form-control"/>
                 </div>
+                <input type="hidden" value="${todo.completed}" name="completed">
 
                 <button class="btn btn-success" type="submit">edit student</button>
             </form>
