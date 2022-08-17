@@ -72,7 +72,7 @@ public class TodoService implements Base<Todo> {
             preparedStatement.setString(2, todo.getTime());
             preparedStatement.setString(3,todo.getDate());
             preparedStatement.setBoolean(4, todo.isCompleted());
-            preparedStatement.setLong(4, todo.getId());
+            preparedStatement.setLong(5, todo.getId());
             status = preparedStatement.executeUpdate();
 
         } catch (SQLException | ClassNotFoundException e) {
